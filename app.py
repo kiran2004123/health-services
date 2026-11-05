@@ -8,7 +8,7 @@ appointments = []
 def home():
     return render_template(
         'index.html',
-        appointments=appointments
+        appointments=appointment
     )
 
 @app.route('/book', methods=['POST'])
