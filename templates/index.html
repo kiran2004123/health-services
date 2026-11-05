@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Health Services App</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Health Services App</h1>
+
+    <form action="/book" method="post">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Patient Name"
+            required>
+
+        <input
+            type="text"
+            name="doctor"
+            placeholder="Doctor Name"
+            required>
+
+        <input
+            type="date"
+            name="date"
+            required>
+
+        <button type="submit">
+            Book Appointment
+        </button>
+
+    </form>
+
+    <h2>Appointments</h2>
+
+    <ul>
+        {% for a in appointments %}
+            <li>
+                {{ a.name }}
+                -
+                {{ a.doctor }}
+                -
+                {{ a.date }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
